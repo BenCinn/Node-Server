@@ -5,7 +5,7 @@ const fs = require("fs") // Handle The File System
 const app = exp() // Express Helper
 const colors = require("colors") // Add the colors to console.log()
 const { exec } = require('child_process') // Handle the code execution
-const path = require('path');
+const path = require('path') // Handle the path system
 
 // Setup the "userid" folder (Won't create if the folder if exist)
 if (!fs.existsSync("userid/")){
