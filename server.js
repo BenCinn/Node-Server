@@ -1,11 +1,21 @@
+// Package install helper.
+function trequire(package){
+    try {
+        return require(package)
+    } catch (e) { // Package is not installed yet
+        console.log("Package " + package + " is not installed yet, exiting...")
+        process.exit(1)
+    }
+}
+
 // Define the packages and its helper.
-const exp = require("express") // Handle the Server Load
-const hash = require("js-sha512") // Handle the encryption
-const fs = require("fs") // Handle The File System
+const exp = trequire("express") // Handle the Server Load
+const hash = trequire("js-sha512") // Handle the encryption
+const fs = trequire("fs") // Handle The File System
 const app = exp() // Express Helper
-const colors = require("colors") // Add the colors to console.log()
-const { exec } = require('child_process') // Handle the code execution
-const path = require('path');
+const colors = trequire("colors") // Add the colors to console.log()
+const { exec } = trequire('child_process') // Handle the code execution
+const path = trequire('path');
 
 // Setup the "userid" folder (Won't create if the folder if exist)
 if (!fs.existsSync("userid/")){
