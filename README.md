@@ -10,3 +10,6 @@
 - ~~child_process~~ (bundled with nodejs)
 - ~~path~~ (bundled with nodejs)
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss) (+ its peer dependencies)
+
+### Run the server
+You could run the server with `npm run build`
