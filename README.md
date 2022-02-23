@@ -9,3 +9,4 @@
 - [colors](https://www.npmjs.com/package/colors)
 - ~~child_process~~ (bundled with nodejs)
 - ~~path~~ (bundled with nodejs)
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss) (+ its peer dependencies)
