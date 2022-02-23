@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "colors": "^1.4.0",
+    "express": "^4.17.3",
+    "fs": "^0.0.1-security",
+    "js-sha512": "^0.8.0",
+    "lowdb": "^3.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.6",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.0.2",
+    "postcss-nesting": "^10.1.2",
+    "postcss-scss": "^4.0.3",
+    "tailwindcss": "^3.0.23"
+  },
+  "scripts": {
+      "build": "postcss ./html/css/main-prep.css -o ./html/css/main.css --watch & node server.js"
+  }
+}
