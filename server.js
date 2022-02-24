@@ -25,18 +25,18 @@ app.get('/css/:css', function(req, res){
 })
 
 // Registration API
-app.get('/registapi/id=:id/pw=:pw', function(req, res){
+app.get('/registapi', function(req, res){
     // Check if user existed
-    fs.stat("userid/" + req.params.id, function(err, stat) {
+    fs.stat("userid/" + req.query.id, function(err, stat) {
     if(err == null) {
         // User already exist
         res.send("User already exist.")
         console.log("ERROR> ".red + "User already exist")
     }
     else {
-        res.send("ID: " + req.params.id + " Register successfully")
+        res.send("ID: " + req.query.id + " Register successfully")
         // Hash the password, then store the password at ./userid/[username]
-        exec("echo " + hash.sha512(req.params.pw) + " >> userid/" + req.params.id)
+        exec("echo " + hash.sha512(req.query.pw) + " >> userid/" + req.query.id)
     }
     })
 })
@@ -57,6 +57,11 @@ app.get('/loginapi', async function(req, res) {
 // Login Page
 app.get('/login', function(req, res){
     res.sendFile(path.join(__dirname, "/html/login.html"))
+})
+
+// Add the register Page
+app.get('/register', function(req, res) {
+    res.sendFile(path.join(__dirname, "/html/register.html"))
 })
 
 // 404 Error Handler
