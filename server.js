@@ -54,18 +54,6 @@ app.get('/loginapi', async function(req, res) {
     }
 });
 
-// User Stats API
-app.get('/userstats/id=:id', function(req, res){
-    fs.stat("userid/" + req.params.id, function(err, stat) {
-        if(err == null) {
-            res.send("User '" + req.params.id + "' existed.")
-        }
-        else {
-            res.send("User '" + req.params.id + "' not existed.")}
-        }
-    )
-})
-
 // Login Page
 app.get('/login', function(req, res){
     res.sendFile(path.join(__dirname, "/html/login.html"))
