@@ -1,11 +1,21 @@
 <html>
-    <head>
-    <form action="/loginapi">
-        <label for="id">Username:</label><br>
-        <input type="text" id="id" name="id"><br>
-        <label for="pw">Password:</label><br>
-        <input type="text" id="pw" name="pw"></label></label>
-        <input type="submit" value="Submit">
-    </form>
-    </head>
+<link rel="stylesheet" href="css/main.css">
+<body>
+<div class="justify-between w-full h-screen max-w-xs">
+  <form action="/loginapi" class="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md">
+    <div class="mb-4">
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="id">Username</label>
+      <input class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="id" name="id" type="text" placeholder="Username">
+    </div>
+    <div class="mb-6">
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="pw">Password</label>
+      <input class="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="pw" name="pw" type="password" placeholder="*******">
+    </div>
+    <div class="flex items-center justify-between">
+      <button class="px-4 py-2 font-semibold text-white bg-blue-500 text-md rounded-md shadow-sm hover:-translate-y-1 hover:rounded-none hover:scale-110 hover:bg-indigo-500 ease-in-out delay-150 duration-300" type="submit">Sign In</button>
+    </div>
+  </form>
+  <p class="text-xs text-center text-gray-500">&copy;aaaaaaaaaa</p>
+</div>
+</body>
 </html>
