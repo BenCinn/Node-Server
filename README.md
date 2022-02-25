@@ -2,7 +2,7 @@
 
 > A simple nodejs server for web development.
 
-### Plugin needed (+ its peer dependencies):
+### Plugin needed ( + its peer dependencies ) :
 - [express](https://www.npmjs.com/package/@nrwl/express)
 - [js-sha512](https://www.npmjs.com/package/js-sha512)
 - ~~fs~~ (bundled with nodejs)
