@@ -17,3 +17,7 @@ or you could run the server without recompiling the css with the command: `npm r
 
 ### Build the css
 You can build the css without running the server again with `npm run build`
+
+## Planned feature:
+- [ ] \[feature\] Adding something to the index page. \([#3](https://github.com/BenCinn/Node-Server/issues/3)\)
+- [ ] \[feature\] Center the login page. \([#2](https://github.com/BenCinn/Node-Server/issues/2)\)
