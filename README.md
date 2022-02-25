@@ -14,3 +14,6 @@
 ### Run the server
 You could run the server ( with css prebuilded ) with the command: `npm run start`
 or you could run the server without recompiling the css with the command: `npm run run`
+
+### Build the css
+You can build the css without running the server again with `npm run build`
