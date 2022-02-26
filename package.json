@@ -18,8 +18,8 @@
     "tailwindcss": "^3.0.23"
   },
   "scripts": {
-      "build": "rm ./html/css/main.css npx tailwindcss -i ./html/css/main-prep.css -o ./html/css/main.css"
-      "run": "node ./server.js"
+      "build": "rm ./html/css/main.css npx tailwindcss -i ./html/css/main-prep.css -o ./html/css/main.css",
+      "run": "node ./server.js",
       "start": "rm ./html/css/main.css npx tailwindcss -i ./html/css/main-prep.css -o ./html/css/main.css && node ./server.js"
   }
 }
