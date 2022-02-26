@@ -79,4 +79,9 @@ app.use(function(err, req, res, next) {
 });
 
 // Start The Server
-app.listen('5000', () => console.log(`Listening on port 5000..`.green))
+app.listen('5000', () => console.log(`Listening on port 5000, Press any key to stop the server and exit..`.green))
+
+// Exit Script
+process.stdin.setRawMode(true)
+process.stdin.resume()
+process.stdin.on('data', process.exit.bind(process, 0))
