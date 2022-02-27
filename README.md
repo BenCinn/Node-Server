@@ -21,4 +21,4 @@ You can build the css without running the server again with `npm run build`
 ## Planned feature
 \[[Version 1](https://github.com/BenCinn/Node-Server/milestone/1)\]:
 - [ ] \[feature\] Add something to the index page \([#3](https://github.com/BenCinn/Node-Server/issues/3)\)
-- [ ] \[feature\] Center the [login page](../blob/main/html/login.html) \([#2](https://github.com/BenCinn/Node-Server/issues/2)\) and [register page](../blob/main/html/register.html) \([#4](https://github.com/BenCinn/Node-Server/issues/5)\)
+- [ ] \[feature\] Center the [login page](../blob/main/html/login.html) \([#2](https://github.com/BenCinn/Node-Server/issues/2)\) and [register page](../blob/main/html/register.html) \([#5](https://github.com/BenCinn/Node-Server/issues/5)\)
