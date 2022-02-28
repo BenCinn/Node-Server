@@ -4,6 +4,7 @@
     "colors": "^1.4.0",
     "express": "^4.17.3",
     "fs": "^0.0.1-security",
+    "helmet": "^5.0.2",
     "js-sha512": "^0.8.0",
     "lowdb": "^3.0.0",
     "path": "^0.12.7"
@@ -18,8 +19,8 @@
     "tailwindcss": "^3.0.23"
   },
   "scripts": {
-      "build": "rm ./html/css/main.css && npx tailwindcss -i ./html/css/main-prep.css -o ./html/css/main.css --minify",
-      "run": "node ./server.js",
-      "start": "rm ./html/css/main.css && npx tailwindcss -i ./html/css/main-prep.css -o ./html/css/main.css --minify && node ./server.js"
+    "build": "rm ./html/css/main.css && npx tailwindcss -i ./html/css/main-prep.css -o ./html/css/main.css --minify",
+    "run": "node ./server.js",
+    "start": "rm ./html/css/main.css && npx tailwindcss -i ./html/css/main-prep.css -o ./html/css/main.css --minify && node ./server.js"
   }
 }
