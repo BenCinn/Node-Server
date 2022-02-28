@@ -6,6 +6,7 @@ const app = exp() // Express Helper
 const colors = require("colors") // Add the colors to console.log()
 const { exec } = require('child_process') // Handle the code execution
 const path = require('path') // Handle the path system
+const helmet = require('helmet')
 
 // Setup the "userid" folder (Won't create if the folder if exist)
 if (!fs.existsSync("userid/")){
@@ -77,6 +78,8 @@ app.use(function(err, req, res, next) {
     console.log("500 Server ERROR.".bgRed + " Path> " + req.url)
     return res.status(500).send('<html><head><title>Oops.</title>Oops. Server error lol.<br>Go back to <a href=' + fullUrl + '>home page<a> if your want, But that probably not even work.</head></html>') // Return the 500 error page.
 });
+
+app.use(helmet())
 
 // Start The Server
 app.listen('5000', () => console.log(`Listening on port 5000, Press any key to stop the server and exit..`.green))
