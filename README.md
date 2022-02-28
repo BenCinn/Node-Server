@@ -10,6 +10,7 @@
 - ~~child_process~~ (bundled with nodejs)
 - ~~path~~ (bundled with nodejs)
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss)
+- [helmet](https://www.npmjs.com/package/helmet)
 
 ### Run the server
 You could run the server ( with css prebuilded ) with the command: `npm run start`
