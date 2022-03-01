@@ -23,4 +23,4 @@ You can build the css without running the server again with `npm run build`
 \[[Version 1](https://github.com/BenCinn/Node-Server/milestone/1)\]:
 - [ ] \[feature\] Add something to the index page \([#3](https://github.com/BenCinn/Node-Server/issues/3)\)
 - [x] \[feature\] Center the [login page](../main/html/login.html) \([#2](https://github.com/BenCinn/Node-Server/issues/2)\) and [register page](../main/html/register.html) \([#5](https://github.com/BenCinn/Node-Server/issues/5)\)
-- [ ] \[vulnerability\] Fix all [XSS in server.js](../main/server.js#L68-L80) \([#6](https://github.com/BenCinn/Node-Server/issues/6) and [#7](https://github.com/BenCinn/Node-Server/issues/7)\)
+- [x] \[vulnerability\] Fix all [XSS in server.js](../main/server.js#L68-L80) \([#6](https://github.com/BenCinn/Node-Server/issues/6) and [#7](https://github.com/BenCinn/Node-Server/issues/7)\)
