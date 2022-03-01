@@ -7,13 +7,14 @@ const colors = require("colors") // Add the colors to console.log()
 const { exec } = require('child_process') // Handle the code execution
 const path = require('path') // Handle the path system
 const helmet = require('helmet')
-var escapeHtml = require('escape-html')
 
 // Setup the "userid" folder (Won't create if the folder if exist)
 if (!fs.existsSync("userid/")){
     console.log("userid/ is not exist, creating the folder.")
     fs.mkdirSync("userid/")
 }
+
+app.use(helmet())
 
 // Home Page
 app.get('/', function(req, res){
@@ -68,19 +69,15 @@ app.get('/register', function(req, res) {
 
 // 404 Error Handler
 app.use(function(req, res, next) {
-    var fullUrl = req.protocol + '://' + req.get('host') // Get the home page url.
-    console.log("404 Error.".yellow + " Path> " + req.url)
-    return res.status(404).send('<title>Oops.</title>'+req.url+' Not found.<br>Go back to <a href=' + escapeHtml(fullUrl) + '>home page<a> if your want.')
+    console.log("404 No File.".bgRed + " Path> " + req.url)
+    res.status(404).send('<head><title>404</title><style type="text/css"></style></head><body></body></html>')
 })
 
 // 500 Error Handler
 app.use(function(err, req, res, next) {
-    var fullUrl = req.protocol + '://' + req.get('host') // Get the home page url.
     console.log("500 Server ERROR.".bgRed + " Path> " + req.url)
-    return res.status(500).send('<html><head><title>Oops.</title>Oops. Server error lol.<br>Go back to <a href=' + escapehtml(fullUrl) + '>home page<a> if your want, But that probably not even work.</head></html>') // Return the 500 error page.
+    res.status(500).send('<head><title>500</title><style type="text/css"></style></head><body></body></html>')
 })
-
-app.use(helmet())
 
 // Start The Server
 app.listen('5000', () => console.log(`Listening on port 5000, Press any key to stop the server and exit..`.green))
