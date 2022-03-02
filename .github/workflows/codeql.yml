@@ -23,7 +23,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: runs-on: [self-hosted, linux, x64, home]
+    runs-on: [self-hosted, linux, x64, home]
     permissions:
       actions: read
       contents: read
