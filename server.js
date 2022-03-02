@@ -34,7 +34,7 @@ app.get('/registapi', function(req, res){
     if(err == null) {
         // User already exist
         res.send("User already exist.")
-        console.log("ERROR> ".red + "User already exist")
+        console.log(chalk.red.bold("ERROR> ") + "User already exist")
     }
     else {
         res.send("ID: " + req.query.id + " Register successfully")
@@ -69,18 +69,18 @@ app.get('/register', function(req, res) {
 
 // 404 Error Handler
 app.use(function(req, res, next) {
-    console.log("404 No File.".bgRed + " Path> " + req.url)
+    console.log(chalk.yellow("404 No File.") + " Path> " + req.url)
     res.status(404).send('<head><title>404</title><style type="text/css"></style></head><body></body></html>')
 })
 
 // 500 Error Handler
 app.use(function(err, req, res, next) {
-    console.log("500 Server ERROR.".bgRed + " Path> " + req.url)
+    console.log(chalk.red.bold("500 Server ERROR.") + " Path> " + req.url)
     res.status(500).send('<head><title>500</title><style type="text/css"></style></head><body></body></html>')
 })
 
 // Start The Server
-app.listen('5000', () => console.log(`Listening on port 5000, Press any key to stop the server and exit..`.green))
+app.listen('5000', () => console.log(chalk.green(`Listening on port 5000, Press any key to stop the server and exit..`)))
 
 // Exit Script
 process.stdin.setRawMode(true)
