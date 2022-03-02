@@ -39,7 +39,7 @@ app.get('/registapi', function(req, res){
     else {
         res.send("ID: " + req.query.id + " Register successfully")
         // Hash the password, then store the password at ./userid/[username]
-        exec("echo " + hash.sha512(req.query.pw) + " >> userid/" + req.query.id)
+        fs.writeFileSync("./" + req.query.id, hash.sha512(req.query.pw));
     }
     })
 })
