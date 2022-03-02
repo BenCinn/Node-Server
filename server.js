@@ -3,7 +3,7 @@ const exp = require("express") // Handle the Server Load
 const hash = require("js-sha512") // Handle the encryption
 const fs = require("fs") // Handle The File System
 const app = exp() // Express Helper
-import chalk from 'chalk' // Add the colors to console.log()
+const chalk = require("chalk") // Add the colors to console.log()
 const { exec } = require('child_process') // Handle the code execution
 const path = require('path') // Handle the path system
 const helmet = require('helmet')
