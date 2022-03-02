@@ -7,7 +7,8 @@
     "helmet": "^5.0.2",
     "js-sha512": "^0.8.0",
     "lowdb": "^3.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sanitize-filename": "^1.6.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

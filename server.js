@@ -7,6 +7,7 @@ const chalk = require("chalk") // Add the colors to console.log()
 const { exec } = require('child_process') // Handle the code execution
 const path = require('path') // Handle the path system
 const helmet = require('helmet')
+const clean = require("sanitize-filename")
 
 // Setup the "userid" folder (Won't create if the folder if exist)
 if (!fs.existsSync("userid/")){
@@ -30,7 +31,7 @@ app.get('/css/:css', function(req, res){
 // Registration API
 app.get('/registapi', function(req, res){
     // Check if user existed
-    fs.stat("userid/" + req.query.id, function(err, stat) {
+    fs.stat("userid/" + clean(req.query.id), function(err, stat) {
     if(err == null) {
         // User already exist
         res.send("User already exist.")
@@ -39,7 +40,7 @@ app.get('/registapi', function(req, res){
     else {
         res.send("ID: " + req.query.id + " Register successfully")
         // Hash the password, then store the password at ./userid/[username]
-        fs.writeFileSync("./" + req.query.id, hash.sha512(req.query.pw));
+        fs.writeFileSync("userid/" + clean(req.query.id), hash.sha512(req.query.pw))
     }
     })
 })
