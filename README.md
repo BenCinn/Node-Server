@@ -21,6 +21,8 @@ You can build the css without running the server again with `npm run build`
 
 ## Planned feature
 \[[Version 1](https://github.com/BenCinn/Node-Server/milestone/1)\]:
-- [ ] \[feature\] Add something to the index page \([#3](https://github.com/BenCinn/Node-Server/issues/3)\)
-- [x] \[feature\] Center the [login page](../main/html/login.html) \([#2](https://github.com/BenCinn/Node-Server/issues/2)\) and [register page](../main/html/register.html) \([#5](https://github.com/BenCinn/Node-Server/issues/5)\)
-- [x] \[vulnerability\] Fix all [XSS in server.js](../main/server.js#L68-L80) \([#6](https://github.com/BenCinn/Node-Server/issues/6) and [#7](https://github.com/BenCinn/Node-Server/issues/7)\)
+- [ ] ![feature](https://labl.es/svg?text=enhancement&bgcolor=a2eeef) Add something to the index page \([#3](https://github.com/BenCinn/Node-Server/issues/3)\)
+- [x] [![enhancement](https://labl.es/svg?text=feature&bgcolor=a2eeef)](https://github.com/BenCinn/Node-Server/issues?q=is%3Aissue+label%3Avulnerability) Center the [login page](../main/html/login.html) \([#2](https://github.com/BenCinn/Node-Server/issues/2)\) and [register page](../main/html/register.html) \([#5](https://github.com/BenCinn/Node-Server/issues/5)\)
+- [ ] [![vulnerability](https://labl.es/svg?text=vulnerability&bgcolor=5B1026)](https://github.com/BenCinn/Node-Server/issues?q=is%3Aissue+label%3Avulnerability) Fix **all** [XSS in server.js](../main/server.js#L68-L80) \(~~[#6](https://github.com/BenCinn/Node-Server/issues/6), [#7](https://github.com/BenCinn/Node-Server/issues/7),~~ [#11](https://github.com/BenCinn/Node-Server/issues/11)\)
+- [ ] [![vulnerability](https://labl.es/svg?text=vulnerability&bgcolor=5B1026)](https://github.com/BenCinn/Node-Server/issues?q=is%3Aissue+label%3Avulnerability)
+ Denial-of-Service (Memory Allocation Problems) ([#9](https://github.com/BenCinn/Node-Server/issues/9) and [#10](https://github.com/BenCinn/Node-Server/issues/10)\)
