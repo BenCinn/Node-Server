@@ -34,7 +34,7 @@ app.get('/', function(req, res){
 
 // CSS Handler
 app.get('/css/:css', function(req, res){
-    res.sendFile(path.join(__dirname, "/html/css", req.params.css))
+    res.sendFile(clean(path.join(__dirname, "/html/css", req.params.css)))
 })
 
 // Registration API
@@ -60,7 +60,7 @@ app.get('/loginapi', async function(req, res) {
     else {
         let id = req.query.id
         let pw = req.query.pw
-        fs.readFile('userid/' + id, 'utf8', function (err, data) {if (err) {return res.send("Wrong Username!")} // Read the password hash stored.
+        fs.readFile(clean('userid/' + id), 'utf8', function (err, data) {if (err) {return res.send("Wrong Username!")} // Read the password hash stored.
             if (data.includes(hash.sha512(pw)) == true) {res.send("Login Successfully!")} // Correct password ( data.includes seems to be the only solution. )
             else {res.send("Wrong Password!")} // Wrong password
         })
