@@ -35,7 +35,8 @@ app.get('/', function(req, res){
 
 // CSS Handler
 app.get('/css/:css', function(req, res){
-    res.sendFile(clean(path.join(__dirname, "/html/css", req.params.css)))
+    res.set('Content-Type', 'text/css')
+    res.sendFile(path.join(__dirname, "/html/css", clean(req.params.css)))
 })
 
 // Registration API
