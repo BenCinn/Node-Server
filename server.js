@@ -9,6 +9,7 @@ const path = require('path') // Handle the path system
 const helmet = require('helmet')
 const clean = require("sanitize-filename")
 const rateLimit = require('express-rate-limit')
+var esc = require('escape-html')
 
 // Setup the "userid" folder (Won't create if the folder if exist)
 if (!fs.existsSync("userid/")){
@@ -47,7 +48,7 @@ app.get('/registapi', function(req, res){
         console.log(chalk.red.bold("ERROR> ") + "User already exist")
     }
     else {
-        res.send("ID: " + req.query.id + " Register successfully")
+        res.send("ID: " + esc(req.query.id) + " Register successfully")
         // Hash the password, then store the password at ./userid/[username]
         fs.writeFileSync("userid/" + clean(req.query.id), hash.sha512(req.query.pw))
     }
