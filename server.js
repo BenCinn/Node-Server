@@ -8,6 +8,7 @@ const { exec } = require('child_process') // Handle the code execution
 const path = require('path') // Handle the path system
 const helmet = require('helmet')
 const clean = require("sanitize-filename")
+const rateLimit = require('express-rate-limit')
 
 // Setup the "userid" folder (Won't create if the folder if exist)
 if (!fs.existsSync("userid/")){
@@ -15,7 +16,15 @@ if (!fs.existsSync("userid/")){
     fs.mkdirSync("userid/")
 }
 
+const limiter = rateLimit({
+	windowMs: 15 * 60 * 1000, // 15 minutes
+	max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+	standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+})
+
 app.use(helmet())
+app.use(limiter)
 
 // Home Page
 app.get('/', function(req, res){

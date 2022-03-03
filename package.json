@@ -3,6 +3,7 @@
     "chalk": "^2.4.1",
     "child_process": "^1.0.2",
     "express": "^4.17.3",
+    "express-rate-limit": "^6.3.0",
     "fs": "^0.0.2",
     "helmet": "^5.0.2",
     "js-sha512": "^0.8.0",
