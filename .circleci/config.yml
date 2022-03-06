@@ -9,8 +9,10 @@ workflows:
 jobs:
   build:
     docker:
-      - image: golang:latest
+      - image: nodejs:latest
+    parallelism: 4
     steps:
       - checkout
+      - run: npm install -g eslint
       - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
-      - run: go vet ./... 2>&1 | ./bin/reviewdog -f=govet -reporter=github-pr-review
+      - run: eslint ./... 2>&1 | ./bin/reviewdog -reporter=github-pr-review
