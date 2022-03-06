@@ -2,4 +2,3 @@ userid/
 node_modules/
 package-lock.json
 .vscode/
-.eslintrc.js
