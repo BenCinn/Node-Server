@@ -8,4 +8,4 @@ jobs:
       - run: npm install -g eslint # reviewdog
       - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
       - run: touch .reviewdog.yml
-      - run: eslint ./... 2>&1 | ./bin/reviewdog -reporter=github-pr-review
+      - run: eslint ./... 2>&1 | ./bin/reviewdog -reporter=github-pr-check
