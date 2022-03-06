@@ -1,0 +1,16 @@
+version: 2.1
+orbs: 
+  swissknife: roopakv/swissknife@0.66.0
+workflows:
+  codeql: # Vulnerabilities check.
+    jobs:
+      - swissknife/codeql-analysis:
+          name: "CodeQL Scan"
+jobs:
+  build:
+    docker:
+      - image: golang:latest
+    steps:
+      - checkout
+      - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
+      - run: go vet ./... 2>&1 | ./bin/reviewdog -f=govet -reporter=github-pr-review
