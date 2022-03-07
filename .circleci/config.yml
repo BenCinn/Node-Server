@@ -5,7 +5,7 @@ jobs:
       - image: node:latest
     steps:
       - checkout
-      - run: npm install -g eslint # reviewdog
-      - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
-      - run: touch .reviewdog.yml
-      - run: eslint ./... 2>&1 | ./bin/reviewdog -reporter=github-check
+      - run: curl -L -O https://github.com/github/codeql-cli-binaries/releases/download/v2.8.2/codeql-linux64.zip
+      - run: unzip codeql-linux64.zip codeql -d .codeql
+      - run: .codeql/codeql database analyze .circleci/javascript/jsc-db .circleci/javascript/ql/src/codeql-suites/javascript-lgtm-full.qls --format=sarifv2.1.0 --output=query-results.sarif --download --threads 8
+      - run: cat query-results.sarif
