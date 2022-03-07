@@ -6,6 +6,6 @@ jobs:
     steps:
       - checkout
       - run: curl -L -O https://github.com/github/codeql-cli-binaries/releases/download/v2.8.2/codeql-linux64.zip
-      - run: unzip codeql-linux64.zip codeql -d .codeql
+      - run: unzip codeql-linux64.zip -d .codeql
       - run: .codeql/codeql database analyze .circleci/javascript/jsc-db .circleci/javascript/ql/src/codeql-suites/javascript-lgtm-full.qls --format=sarifv2.1.0 --output=query-results.sarif --download --threads 8
       - run: cat query-results.sarif
