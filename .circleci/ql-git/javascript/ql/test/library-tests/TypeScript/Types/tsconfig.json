@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "module": "esnext",
-    "target": "esnext",
-    "lib": ["dom", "esnext"],
-    "resolveJsonModule": true
-  }
-}
