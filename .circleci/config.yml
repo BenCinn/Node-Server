@@ -10,7 +10,7 @@ jobs:
       - run: git clone $TESTSUIT_REPOS .ql-git
       - run: .codeql/codeql/codeql database analyze .ql-git/javascript/jscdb .ql-git/javascript/ql/src/codeql-suites/javascript-lgtm-full.qls --format=sarif-latest --output=query-results.sarif --download --threads=0 --additional-packs .codeql/
       - run: .codeql/codeql/codeql github upload-results --sarif="query-results.sarif" -g="https://github.com/BenCinn/Node-Server/" -r="BenCinn/Node-Server" -f="$(cat .git/HEAD | cut -d' ' -f2-)"
-      - run: "[[ -z '$CIRCLE_PULL_REQUEST' ]] && echo Start PR-Check using reviewdog. || exit 0"
+      - run: "[[ -z '$CIRCLE_PULL_REQUEST' ]] && echo Start PR-Check using reviewdog. || circleci-agent step halt"
       - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b ./bin
       - run: export CI_PULL_REQUEST="$CIRCLE_PR_NUMBER"; export CI_COMMIT="$CIRCLE_SHA1"; export CI_REPO_OWNER="BenCinn"; export CI_REPO_NAME="Node-Server"; export CI_BRANCH="$CIRCLE_BRANCH"
       - run: eslint . | ./bin/reviewdog -f=eslint -reporter=github-pr-review -guess
