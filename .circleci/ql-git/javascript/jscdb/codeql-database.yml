@@ -1,0 +1,10 @@
+---
+sourceLocationPrefix: "/home/cinnamonn/git/shit"
+baselineLinesOfCode: 72152
+unicodeNewlines: true
+columnKind: "utf16"
+primaryLanguage: "javascript"
+creationMetadata:
+  sha: "713deaf1f7548f9e3b0220c6e16c120ce9618a2f"
+  cliVersion: "2.8.2"
+  creationTime: "2022-03-08T00:39:57.172509200Z"
