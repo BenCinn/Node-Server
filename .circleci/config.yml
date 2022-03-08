@@ -12,6 +12,6 @@ jobs:
       - run: .codeql/codeql/codeql github upload-results --sarif="query-results.sarif" -g="https://github.com/BenCinn/Node-Server/" -r="BenCinn/Node-Server" -f="$(cat .git/HEAD | cut -d' ' -f2-)"
       - run: set +o pipefail
       - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b ./bin
-      - run: export CI_PULL_REQUEST="$CIRCLE_PR_NUMBER"; export CI_COMMIT="$CIRCLE_SHA1"; export CI_REPO_OWNER="BenCinn"; export CI_REPO_NAME="Node-Server"; export CI_BRANCH="$CIRCLE_BRANCH"; export REVIEWDOG_GITHUB_API_TOKEN="$GITHUB_TOKEN"
+      - run: export CI_PULL_REQUEST="${CIRCLE_PR_NUMBER}"; export CI_COMMIT="${CIRCLE_SHA1}"; export CI_REPO_OWNER="BenCinn"; export CI_REPO_NAME="Node-Server"; export CI_BRANCH="${CIRCLE_BRANCH}"; export REVIEWDOG_GITHUB_API_TOKEN="${GITHUB_TOKEN}"
       - run: npm install -g eslint
       - run: eslint . | ./bin/reviewdog -f=eslint -reporter=github-pr-review
