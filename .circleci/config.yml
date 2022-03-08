@@ -8,6 +8,6 @@ jobs:
       - run: curl -L -O https://github.com/github/codeql-cli-binaries/releases/download/v2.8.2/codeql-linux64.zip
       - run: unzip codeql-linux64.zip -d .codeql
       - run: git clone $TESTSUIT_REPOS .ql-git
-      - run: .codeql/codeql/codeql database analyze .ql-git/javascript/jscdb .ql-git/javascript/ql/src/codeql-suites/javascript-lgtm-full.qls --format=sarifv2.1.0 --output=query-results.sarif --download --threads 4
+      - run: .codeql/codeql/codeql database analyze .ql-git/javascript/jscdb .ql-git/javascript/ql/src/codeql-suites/javascript-lgtm-full.qls --format=latest-sarif --output=query-results.sarif --download --threads=0 --additional-packs
       - run: .codeql/codeql/codeql github upload-results --sarif="query-results.sarif" -g="https://github.com/BenCinn/Node-Server/" -r="BenCinn/Node-Server" -f="$(cat .git/HEAD | cut -d' ' -f2-)"
       - run: cat query-results.sarif
