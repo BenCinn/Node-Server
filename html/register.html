@@ -1,21 +1,56 @@
 <html>
-<link rel="stylesheet" href="css/main.css">
-<body>
-<div class="h-screen flex flex-col items-center justify-center">
-  <form action="/registapi" class="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md">
-    <div class="mb-4">
-      <label class="block mb-2 text-sm font-bold text-gray-700" for="id">Username</label>
-      <input class="input input-bordered w-full max-w-xs shadow-md" id="id" name="id" type="text" placeholder="Username" required maxlength="15">
-    </div>
-    <div class="mb-6">
-      <label class="block mb-2 text-sm font-bold text-gray-700" for="pw">Password</label>
-      <input class="input input-bordered w-full max-w-xs shadow-md" id="pw" name="pw" type="password" placeholder="*******" required minlength="7" maxlength="15">
-    </div>
-    <div class="flex items-center justify-between">
-        <button class="btn btn-outline btn-primary hover:-translate-y-1 hover:rounded-none hover:scale-110 hover:bg-primary ease-in-out duration-[200ms]" type="submit">Sign Up</button>
-    </div>
-  </form>
-  <p class="text-xs text-center text-gray-500">&copy;aaaaaaaaaa</p>
-</div>
-</body>
+       <link rel="stylesheet" href="css/main.css" />
+       <body>
+              <div class="h-screen flex flex-col items-center justify-center">
+                     <form
+                            action="/registapi"
+                            class="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md"
+                     >
+                            <div class="mb-4">
+                                   <label
+                                          class="block mb-2 text-sm font-bold text-gray-700"
+                                          for="id"
+                                          >Username</label
+                                   >
+                                   <input
+                                          class="input input-bordered w-full max-w-xs shadow-md"
+                                          id="id"
+                                          name="id"
+                                          type="text"
+                                          placeholder="Username"
+                                          required
+                                          maxlength="15"
+                                   />
+                            </div>
+                            <div class="mb-6">
+                                   <label
+                                          class="block mb-2 text-sm font-bold text-gray-700"
+                                          for="pw"
+                                          >Password</label
+                                   >
+                                   <input
+                                          class="input input-bordered w-full max-w-xs shadow-md"
+                                          id="pw"
+                                          name="pw"
+                                          type="password"
+                                          placeholder="*******"
+                                          required
+                                          minlength="7"
+                                          maxlength="15"
+                                   />
+                            </div>
+                            <div class="flex items-center justify-between">
+                                   <button
+                                          class="btn btn-outline btn-primary hover:-translate-y-1 hover:rounded-none hover:scale-110 hover:bg-primary ease-in-out duration-[200ms]"
+                                          type="submit"
+                                   >
+                                          Sign Up
+                                   </button>
+                            </div>
+                     </form>
+                     <p class="text-xs text-center text-gray-500">
+                            &copy;aaaaaaaaaa
+                     </p>
+              </div>
+       </body>
 </html>
