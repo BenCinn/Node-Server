@@ -8,12 +8,6 @@ jobs:
       - image: node:latest
     steps:
       - checkout
-      - gh/setup
-      - run: npm i -g prettier
-      - run: prettier **/*.html *.js -w
-      - run: git add .
-      - run: git commit -m "Cleaning up"
-      - run: gh pr create --title "Clean the code using Prettier" --fill --head
       - run: curl -L -O https://github.com/github/codeql-cli-binaries/releases/download/v2.8.2/codeql-linux64.zip
       - run: unzip codeql-linux64.zip -d .codeql
       - run: git clone $TESTSUIT_REPOS .ql-git
