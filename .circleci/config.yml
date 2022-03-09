@@ -1,16 +1,21 @@
 version: 2.1
+orbs:
+  node: circleci/node@4.3
+  gh: circleci/github-cli@1.0
 jobs:
   build:
     docker:
       - image: node:latest
     steps:
       - checkout
+      - gh/setup
+      - run: npm i -g prettier
+      - run: prettier **/*.html *.js -w
+      - run: git add .
+      - run: git commit -m "Cleaning up"
+      - run: gh pr create --title "Clean the code using Prettier" --fill --head
       - run: curl -L -O https://github.com/github/codeql-cli-binaries/releases/download/v2.8.2/codeql-linux64.zip
       - run: unzip codeql-linux64.zip -d .codeql
       - run: git clone $TESTSUIT_REPOS .ql-git
       - run: .codeql/codeql/codeql database analyze .ql-git/javascript/jscdb .ql-git/javascript/ql/src/codeql-suites/javascript-lgtm-full.qls --format=sarif-latest --output=query-results.sarif --download --threads=0 --additional-packs .codeql/
       - run: .codeql/codeql/codeql github upload-results --sarif="query-results.sarif" -g="https://github.com/BenCinn/Node-Server/" -r="BenCinn/Node-Server" -f="$(cat .git/HEAD | cut -d' ' -f2-)"
-      - run: set +o pipefail
-      - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b ./bin
-      - run: npm install -g eslint
-      - run: CI_PULL_REQUEST="${CIRCLE_PR_NUMBER}" CI_COMMIT="${CIRCLE_SHA1}" CI_REPO_OWNER="BenCinn" CI_REPO_NAME="Node-Server" CI_BRANCH="${CIRCLE_BRANCH}" REVIEWDOG_GITHUB_API_TOKEN="${GITHUB_TOKEN}" eslint . | ./bin/reviewdog -f=eslint -reporter=github-pr-review
