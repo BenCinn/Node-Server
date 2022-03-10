@@ -41,7 +41,7 @@ app.get('/css/:css', function (req, res) {
 // Registration API
 app.get('/registapi', function (req, res) {
        // Check if user existed
-       fs.stat('userid/' + clean(req.query.id), function (err, stat) {
+       fs.stat('userid/' + clean(req.query.id), function (err) {
               if (err == null) {
                      // User already exist
                      res.send('User already exist.');
@@ -96,7 +96,7 @@ app.get('/register', function (req, res) {
 });
 
 // 404 Error Handler
-app.use(function (req, res, next) {
+app.use(function (req, res) {
        console.log(chalk.yellow('404 No File.') + ' Path> ' + req.url);
        res.status(404).send(
               '<head><title>404</title><style type="text/css"></style></head><body></body></html>'
@@ -104,7 +104,7 @@ app.use(function (req, res, next) {
 });
 
 // 500 Error Handler
-app.use(function (err, req, res, next) {
+app.use(function (err, req, res) {
        console.log(chalk.red.bold('500 Server ERROR.') + ' Path> ' + req.url);
        res.status(500).send(
               '<head><title>500</title><style type="text/css"></style></head><body></body></html>'
