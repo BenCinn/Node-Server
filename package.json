@@ -25,7 +25,7 @@
   },
   "scripts": {
     "build": "npx tailwindcss -i ./html/css/main-prep.css -o ./html/css/main.css --minify",
-    "quick": "node ./server.js",
+    "start": "node ./server.js",
     "dev": "npx tailwindcss -i ./html/css/main-prep.css -o ./html/css/main.css --minify && node ./server.js"
   }
 }
