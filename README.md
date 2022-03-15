@@ -5,7 +5,7 @@
 ### Run the server
 
 You could run the server ( with css prebuilded ) with the command: `npm run dev`
-or you could run the server without recompiling the css with the command: `npm run quick`
+or you could run the server without recompiling the css with the command: `npm run start`
 
 ### Build the css
 
