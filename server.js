@@ -16,6 +16,12 @@ if (!fs.existsSync('userid/')) {
        fs.mkdirSync('userid/');
 }
 
+// Setup the "img" folder (Won't create if the folder exist)
+if (!fs.existsSync('img/')) {
+       console.log('img/ is not exist, creating the folder.');
+       fs.mkdirSync('img/');
+}
+
 const limiter = rateLimit({
        windowMs: 15 * 60 * 1000, // 15 minutes
        max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
@@ -36,6 +42,12 @@ app.get('/', function (req, res) {
 app.get('/css/:css', function (req, res) {
        res.set('Content-Type', 'text/css');
        res.sendFile(path.join(__dirname, '/html/css', clean(req.params.css)));
+});
+
+// Image Handler
+app.get('/img/:img', function (req, res) {
+       // Send the correspond image
+       res.sendFile(path.join(__dirname, '/img', clean(req.params.img)));
 });
 
 // Registration API
