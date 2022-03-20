@@ -1,4 +1,4 @@
-# Node-Server <img align=center src="https://svg-labels-dark.herokuapp.com/svg?text=Beta&bgcolor=30cf5a&dimtheme=true" />
+# Node-Server <img align="center" src="https://svg-labels-dark.herokuapp.com/svg?text=In%20Development%20/%20Unstable&bgcolor=800080&dimtheme=true" />
 
 > A simple nodejs server for web development.
 
